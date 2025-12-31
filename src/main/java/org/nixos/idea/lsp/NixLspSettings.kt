@@ -16,12 +16,10 @@ import java.util.Deque
 class NixLspSettings : SimplePersistentStateComponent<NixLspSettings.State>(State()) {
 
     class State : BaseState() {
-        var enabled by property(false)
         var command by string()
         var history: Deque<String> by property(ArrayDeque(), { it.isEmpty() })
     }
 
-    var isEnabled: Boolean by delegate(State::enabled)
     var command: String by delegate(State::command, State::history)
     val commandHistory: Collection<String>
         get() = Collections.unmodifiableCollection(state.history)

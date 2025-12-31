@@ -16,3 +16,4 @@ jetbrains-intellij-platform = { id = "org.jetbrains.intellij.platform", version 
 jetbrains-changelog = { id = "org.jetbrains.changelog", version = "2.2.0" }
 # read more: https://github.com/JetBrains/gradle-grammar-kit-plugin
 jetbrains-grammarkit = { id = "org.jetbrains.grammarkit", version = "2022.3.2.2" }
+lsp4ij = { id = "com.redhat.devtools.lsp4ij", version = "0.12.0" }

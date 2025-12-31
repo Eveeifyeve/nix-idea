@@ -57,7 +57,7 @@ internal object SimplePersistentStateComponentHelper {
      *         get() = Collections.unmodifiableCollection(state.history)
      * }
      */
-    fun <S : BaseState> delegate(prop: KMutableProperty1<S, String?>, historyProp: KProperty1<S, Deque<String>>) =
+    fun <S : BaseState> delegate(prop: List<T>, historyProp: KProperty1<S, Deque<String>>) =
         object : ReadWriteProperty<SimplePersistentStateComponent<S>, String> {
             override fun getValue(thisRef: SimplePersistentStateComponent<S>, property: KProperty<*>): String {
                 return Strings.notNullize(prop.get(thisRef.state))

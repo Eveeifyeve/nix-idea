@@ -57,10 +57,11 @@ dependencies {
     testImplementation(libs.junit5.platform.testkit)
     testImplementation(libs.junit4)
     testRuntimeOnly(libs.junit5.vintage.engine)
-
     intellijPlatform {
         create(platformType, platformVersion)
         testFramework(TestFrameworkType.Platform)
+        val lsp4ij = libs.plugins.lsp4ij.get()
+        plugin("${lsp4ij.pluginId}:${lsp4ij.version}")
         //testFramework(TestFrameworkType.JUnit5)
         instrumentationTools()
         pluginVerifier()
